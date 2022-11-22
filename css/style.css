@@ -48,7 +48,20 @@ font-size: 10px;
 color: #7f7f7f;
 }
 
+ul{
+list-style-type: none;
+}
+
+a {
+color: #7f7f7f;
+text-decoration: none;
+}
+
 /* hover */
+
+a:hover{
+color: white;
+}
 
 .add-playlist:hover{
 color: white;
@@ -59,9 +72,16 @@ background-color: white;
 font-size: 14px;
 }
 .nome-playlist li:hover,
-.icon-text:hover,
 .fa-folder:hover,
 .fa-heart:hover {
+color: white;
+}
+
+.icon:hover img{
+filter: opacity(100%);
+}
+
+.icon:hover .icon-text{
 color: white;
 }
 
@@ -74,8 +94,36 @@ text-decoration: underline;
 font-size: 35px;
 }
 
-.progress-bar .value:hover{
+.progress-bar .bar:hover .value{
 background-color: #c6f276;
+}
+
+.progress-bar .bar:hover{
+cursor: pointer;
+}
+
+.progress-bar:hover .marker{
+display: block;
+}
+
+.card:hover figure{
+transform: scale(1.05) translateY(-10px);
+}
+
+.card:hover figure::after{
+content: '\f144';
+position: absolute;
+font-family: 'Font Awesome 5 Free';
+font-size: 55px;
+top: 0;
+right: 0;
+left: 0;
+bottom: 0;
+background-color: rgba(0,0,0,0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
 }
 
 /* Main bar */
@@ -95,6 +143,7 @@ align-items: center;
 
 .icons{
 margin-top: 10px;
+cursor: pointer;
 }
 
 .icon{
@@ -104,6 +153,25 @@ margin-bottom: 10px;
 
 .icon img{
 width: 25px;
+filter: opacity(50%);
+}
+
+.active img{
+filter: opacity(100%);
+}
+
+.active .icon-text{
+color: white;
+}
+
+.icons .icon.active::before{
+content: '';
+background-color: #adff2f;
+width: 3px;
+height: 22px;
+display: block;
+margin: auto 3px;
+display: none;
 }
 
 #playlist-content{
@@ -122,6 +190,7 @@ width: 25px;
 
 .icon-text{
 display: none;
+cursor: pointer;
 }
 
 .playlist{
@@ -136,6 +205,7 @@ text-align: center;
 vertical-align: middle;
 line-height: 40px;
 margin-right: 5px;
+cursor: pointer;
 }
 
 .add-playlist div{
@@ -151,6 +221,7 @@ line-height: 35px;
 
 .nome-playlist{
 margin-top: 20px;
+cursor: pointer;
 }
 
 .nome-playlist li{
@@ -221,6 +292,7 @@ border: 1px solid white;
 padding: 13px 38px;
 border-radius: 50px;
 text-transform: uppercase;
+cursor: pointer;
 }
 
 /* Bottom playlist */
@@ -231,6 +303,33 @@ width: calc(100vw - 50px);
 padding: 100px 20px;
 overflow-y: auto;
 color: white;
+}
+
+.nav-playlist{
+justify-content: center;
+align-items: flex-start;
+margin-bottom: 30px;
+}
+
+.nav-playlist ul{ 
+flex-wrap: wrap;
+justify-content: center;
+align-items: flex-start;
+}
+
+.nav-playlist li{ 
+font-weight: bold;
+font-size: 13px;
+padding: 20px 10px;
+}
+
+.nav-playlist li.active::after{
+content: '';
+background-color: #adff2f;
+height: 3px;
+width: 40%;
+display: block;
+margin: 3px auto;
 }
 
 .row{
@@ -251,8 +350,13 @@ margin-bottom: 30px;
 max-width: 100%;
 display: block;
 }
+            
+.card figure{
+position: relative;
+transition: tranform 0 1s;
+}
 
-.card-text {
+.card-text{
 text-align: center;
 }
 
@@ -264,7 +368,7 @@ margin-bottom: 20px;
 #bottom-playlist h2{
 margin-top: 15px;
 }
-
+ 
 .card-rounded{
 width: 100%;
 height: 100%;
@@ -302,9 +406,12 @@ margin-right: 10px;
 flex-direction: column;
 margin: 0 30px;
 color:#7f7f7f;
+cursor: pointer;
 }
 
 .footer-center{
+flex-direction: column;
+flex-grow: 1;
 align-items: center;
 }
 
@@ -321,6 +428,13 @@ padding: 0 20px;
 .footer-center .progress-bar{
 align-items: center;
 margin-top: 10px;
+width: 60%;
+min-width: 180px;
+}
+
+.footer-controls{
+align-items: center;
+cursor: pointer;
 }
 
 .progress-bar h4{
@@ -346,9 +460,23 @@ height: 100%;
 border-radius: 5px;
 }
 
+.progress-bar .marker{
+width: 13px;
+height: 13px;
+border-radius: 50%;
+background-color: white;
+cursor: pointer;
+position: absolute;
+top: 50%;
+right: 0;
+transform: translate(50%, -50%);
+display: none;
+}
+
 .footer-right i{
 font-size: 13px;
-padding: 0 7px;
+padding: 0 3px;
+cursor: pointer;
 }
     
 .footer-right .progress-bar{
@@ -358,7 +486,6 @@ width: 70px;
 .footer-right{
 align-items: center;
 }
-
 
 /* ************************************* */
 /* Media Query Breakpoints */
@@ -422,6 +549,10 @@ margin-right: 10px;
 
 .icon.profile img{
 width: 18px;
+}
+
+.icons .icon.active::before{
+    display: block;
 }
 }
 

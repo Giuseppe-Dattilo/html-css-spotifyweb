@@ -27,22 +27,23 @@
 
     <body class="debug">
 
-         <!-- Top-Content -->
+        <!-- Top-Content -->
 
         <main class="flex">
 
             <!-- Left Navbar -->
-            <nav class="main-bar flex border">
+            <nav class="main-bar flex">
+
                 <!-- Top Navbar -->
                 <div class="main-bar-top">
                     <a href="#"><img src="img/logo.svg" alt="Logo Spotify"id="logo"></a>
                     <a href="#"><img src="img/logo-small.svg" alt="logo small Spotify" id="small-logo"></a>
                     <div class="icons">
-                        <div class="icon flex">
+                        <div class="icon active flex">
                             <a href="#"><img src="img/home.svg" alt="home"></a>
                             <div class="icon-text">Home</div>
-                            </div>
-                            <div class="icon flex">
+                        </div>
+                        <div class="icon flex">
                             <a href="#"><img src="img/search.svg" alt="search"></img></a>
                             <div class="icon-text">Cerca</div>
                         </div>
@@ -72,6 +73,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <!-- Bottom Navbar -->
                 <div class="main-bar-bottom">
                     <div class="icon download flex">
@@ -92,21 +94,31 @@
             <section id="playlist-content">
 
                 <!-- header -->
-                <header class="top-playlist flex border">
+                <header class="top-playlist flex">
                     <button class="btn">effettua l'upgrade</button>
                 </header>
                 
                 <!-- Main Section -->
                 <section id="bottom-playlist">
+                    <nav class="nav-playlist">
+                        <ul class="flex">
+                            <li class="active"><a href="#">IN EVIDENZA</a></li>
+                            <li><a href="#">PODCAST</a></li>
+                            <li><a href="#">CLASSIFICHE</a></li>
+                            <li><a href="#">GENERI E MOOD</a></li>
+                            <li><a href="#">NUOVE USCITE</a></li>
+                            <li><a href="#">SCOPRI</a></li>
+                        </ul>
+                    </nav>
 
                     <!-- Recently Played -->
                     <h1>Recently Played</h1>
                     <div class="row flex">
                         <div class="col">
                             <div class="card">
-                                <div class="card-image">
+                                <figure class="card-image">
                                     <img src="img/metal_lifting.jpg" alt="Metallica">
-                                </div>
+                                </figure>
                                 <div class="card-text">
                                     <h2>Heavy Metal</h2>
                                     <h3>Subtitle</h3>
@@ -115,9 +127,9 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <div class="card-image">
+                                <figure class="card-image">
                                     <img src="img/stranger.jpeg" alt="Stranger Things">
-                                </div>
+                                </figure>
                                 <div class="card-text">
                                     <h2>Stranger Thingsh, Vol.1 (a Netflix Original Serier Soundtrack)</h2>
                                     <h3>Kyle Dixon & Michael Stein</h3>
@@ -126,9 +138,9 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <div class="card-image">
+                                <figure class="card-image">
                                     <img src="img/aquietplace.jpeg" alt="A Quiet Place">
-                                </div>
+                                </figure>
                                 <div class="card-text">
                                     <h2>A quiet place</h2>
                                     <h3>Subtitle</h3>
@@ -137,9 +149,9 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <div class="card-image">
+                                <figure class="card-image">
                                     <img src="img/split.jpeg" alt="Split">
-                                </div>
+                                </figure>
                                 <div class="card-text">
                                     <h2>Split</h2>
                                     <h3>subtitle</h3>
@@ -148,9 +160,9 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <div class="card-image">
+                                <figure class="card-image">
                                     <img src="img/cure.jpeg" alt="A Cure For Wellness">
-                                </div>
+                                </figure>
                                 <div class="card-text">
                                     <h2>A cure for wellness</h2>
                                     <h3>subtitle</h3>
@@ -159,9 +171,9 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <div class="card-image">
+                                <figure class="card-image">
                                     <img src="img/sinister.jpeg" alt="Sinister">
-                                </div>
+                                </figure>
                                 <div class="card-text">
                                     <h2>Sinister</h2>
                                     <h3>subtitle</h3>
@@ -176,9 +188,9 @@
                     <div class="row flex">
                         <div class="col">
                             <div class="card">
-                                <div class="card-image">
+                                <figure class="card-image">
                                     <img src="img/radar.jpeg" alt="Realease Radar">
-                                </div>
+                                </figure>
                                 <div class="card-text">
                                     <h2>Realise Radar</h2>
                                 </div>
@@ -186,9 +198,9 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <div class="card-image">
+                                <figure class="card-image">
                                     <img src="img/mixdaily.jpeg" alt="Daily Mix 1">
-                                </div>
+                                </figure>
                                 <div class="card-text">
                                     <h2>Daily Mix 1</h2>
                                 </div>
@@ -203,9 +215,9 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-image">
-                                    <div class="card-rounded">
+                                    <figure class="card-rounded">
                                         <img src="img/youg.jpeg" alt="Lana del rey">
-                                    </div>
+                                    </figure>
                                 </div>
                                 <div class="card-text">
                                     <h2>Lana del rey</h2>
@@ -215,9 +227,9 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-image">
-                                    <div class="card-rounded">
+                                    <figure class="card-rounded">
                                         <img src="img/einaudi.jpeg" alt="Ludovico Einaudi">
-                                    </div>
+                                    </figure>
                                 </div>
                                 <div class="card-text">
                                     <h2>Ludovico Einaudi</h2>
@@ -247,8 +259,8 @@
             </div>
 
             <!-- Footer center -->
-            <div class="footer-center">
-                <div class="footer-center flex">
+            <div class="footer-center flex">
+                <div class="footer-controls flex">
                     <i class="fas fa-shuffle"></i>
                     <i class="fas fa-backward-step"></i>
                     <i class="far fa-circle-play"></i>
@@ -258,7 +270,9 @@
                 <div class="progress-bar flex">
                     <h4>0:25</h4>
                     <div class="bar">
-                        <div class="value"></div>
+                        <div class="value">
+                            <div class="marker"></div>
+                        </div>
                     </div>
                     <h4>4:35</h4>
                 </div>
@@ -272,7 +286,9 @@
                 <i class="fas fa-volume-high"></i>
                 <div class="progress-bar">
                     <div class="bar">
-                        <div class="value"></div>
+                        <div class="value">
+                            <div class="marker"></div>
+                        </div>
                     </div>
                 </div>
              </div>
